@@ -1,6 +1,8 @@
 from typer import Exit, Option, Typer
 
+from .settings import get_settings
 from .utils import console, version
+from .watch import wait_for_no_players
 
 # Allow invocation without subcommand so --version option does not produce an error
 interface = Typer(invoke_without_command=True, no_args_is_help=True)
@@ -16,8 +18,10 @@ def version_callback(
 
 
 @interface.command()
-def hello():
-    console.print("Hello, World!")
+def watch():
+    settings = get_settings()
+    # console.print(get_num_players(settings.host, settings.port))
+    wait_for_no_players(settings.host, settings.port)
 
 
 def cli():

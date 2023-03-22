@@ -12,3 +12,4 @@ services:
     cap_drop:
       - ALL
     init: true
+    network_mode: "host"

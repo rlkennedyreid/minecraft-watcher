@@ -79,8 +79,13 @@ def get_info(host: str, port: int) -> dict:
     return info
 
 
+@retry(
+    wait=wait_fixed(10) + wait_random(0, 2),
+)
 def get_num_players(host: str, port: int) -> int:
     info = get_info(host, port)
+
+    _logger.debug(info)
 
     try:
         num_players = info["players"]["online"]
@@ -118,7 +123,7 @@ def wait_for_no_players(host: str, port: int):
 
 @retry(
     wait=wait_fixed(10) + wait_random(0, 2),
-    stop=stop_after_attempt(10),
+    stop=stop_after_attempt(5),
     before_sleep=before_sleep_log(_logger, ERROR),
 )
 def kill_server():

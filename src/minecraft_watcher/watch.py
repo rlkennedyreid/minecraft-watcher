@@ -49,7 +49,7 @@ def get_info(host: str, port: int) -> dict:
     try:
         s.connect((host, port))
     except ConnectionRefusedError as err:
-        _logger.error("Connection refused error")
+        _logger.error(f"Connection refused error for host {host}:{port}")
         raise err
 
     s.send(

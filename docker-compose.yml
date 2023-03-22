@@ -1,0 +1,14 @@
+version: "3"
+services:
+  proxy:
+    restart: always
+    build:
+      context: .
+    environment:
+      KILL_WEBHOOK: ${KILL_WEBHOOK}
+      HOST: ${HOST}
+      LOG_LEVEL: ${LOG_LEVEL}
+      TIMEOUT_S: ${TIMEOUT_S}
+    cap_drop:
+      - ALL
+    init: true

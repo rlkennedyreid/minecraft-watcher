@@ -1,19 +1,20 @@
 from json import loads
+from logging import DEBUG, ERROR, getLogger
+from socket import AF_INET, SOCK_STREAM, socket
 from struct import pack
-from socket import socket, AF_INET, SOCK_STREAM
-from logging import getLogger
-from .settings import get_settings
 from time import sleep
+
 from requests import post
 from tenacity import (
+    before_log,
+    before_sleep_log,
     retry,
+    stop_after_attempt,
     wait_fixed,
     wait_random,
-    stop_after_attempt,
-    before_sleep_log,
-    before_log,
 )
-from logging import ERROR, DEBUG
+
+from .settings import get_settings
 
 _logger = getLogger(__name__)
 

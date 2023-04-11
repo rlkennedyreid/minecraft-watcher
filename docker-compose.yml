@@ -1,12 +1,13 @@
 version: "3"
 services:
-  proxy:
-    restart: always
+  watcher:
+    restart: "unless-stopped"
     build:
       context: .
     environment:
       KILL_WEBHOOK: ${KILL_WEBHOOK}
       HOST: ${HOST}
+      PORT: ${PORT}
       LOG_LEVEL: ${LOG_LEVEL}
       TIMEOUT_S: ${TIMEOUT_S}
     cap_drop:

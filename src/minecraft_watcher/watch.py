@@ -24,7 +24,7 @@ _logger = getLogger(__name__)
     before_sleep=before_sleep_log(_logger, ERROR),
 )
 def get_status(host: str, port: int) -> PingResponse:
-    server = JavaServer.lookup(host, port)
+    server = JavaServer(host, port)
 
     _logger.debug(f"Parsed server: {server.address.host}:{server.address.port}")
 

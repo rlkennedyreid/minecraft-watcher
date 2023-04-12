@@ -21,6 +21,21 @@ wrapt = [
 ]
 
 [[package]]
+name = "asyncio-dgram"
+version = "2.1.2"
+description = "Higher level Datagram support for Asyncio"
+category = "main"
+optional = false
+python-versions = ">=3.5"
+files = [
+    {file = "asyncio-dgram-2.1.2.tar.gz", hash = "sha256:bc28a90bc0523009fb0da16ca983c1400ff403a315754d86e037910563697f91"},
+    {file = "asyncio_dgram-2.1.2-py3-none-any.whl", hash = "sha256:9ef55fc760f93c8212709329a1e28a1cf1c1f0fc8222f1be0227c2b7606a10a2"},
+]
+
+[package.extras]
+test = ["black (>=20.8b1)", "flake8 (>=3.8.3)", "mypy (>=0.812)", "mypy-extensions (>=0.4.3)", "pytest (>=5.4.3)", "pytest-asyncio (>=0.14.0)", "typed-ast (>=1.4.3)", "typing-extensions (>=3.10.0.0)"]
+
+[[package]]
 name = "black"
 version = "23.3.0"
 description = "The uncompromising code formatter."
@@ -224,6 +239,26 @@ files = [
 graph = ["objgraph (>=1.7.2)"]
 
 [[package]]
+name = "dnspython"
+version = "2.2.1"
+description = "DNS toolkit"
+category = "main"
+optional = false
+python-versions = ">=3.6,<4.0"
+files = [
+    {file = "dnspython-2.2.1-py3-none-any.whl", hash = "sha256:a851e51367fb93e9e1361732c1d60dab63eff98712e503ea7d92e6eccb109b4f"},
+    {file = "dnspython-2.2.1.tar.gz", hash = "sha256:0f7569a4a6ff151958b64304071d370daa3243d15941a7beedf0c9fe5105603e"},
+]
+
+[package.extras]
+curio = ["curio (>=1.2,<2.0)", "sniffio (>=1.1,<2.0)"]
+dnssec = ["cryptography (>=2.6,<37.0)"]
+doh = ["h2 (>=4.1.0)", "httpx (>=0.21.1)", "requests (>=2.23.0,<3.0.0)", "requests-toolbelt (>=0.9.1,<0.10.0)"]
+idna = ["idna (>=2.1,<4.0)"]
+trio = ["trio (>=0.14,<0.20)"]
+wmi = ["wmi (>=1.5.1,<2.0.0)"]
+
+[[package]]
 name = "exceptiongroup"
 version = "1.1.1"
 description = "Backport of PEP 654 (exception groups)"
@@ -354,6 +389,22 @@ files = [
     {file = "mccabe-0.7.0-py2.py3-none-any.whl", hash = "sha256:6c2d30ab6be0e4a46919781807b4f0d834ebdd6c6e3dca0bda5a15f863427b6e"},
     {file = "mccabe-0.7.0.tar.gz", hash = "sha256:348e0240c33b60bbdf4e523192ef919f28cb2c3d7d5c7794f74009290f236325"},
 ]
+
+[[package]]
+name = "mcstatus"
+version = "10.0.2"
+description = "A library to query Minecraft Servers for their status and capabilities."
+category = "main"
+optional = false
+python-versions = ">=3.8,<4"
+files = [
+    {file = "mcstatus-10.0.2-py3-none-any.whl", hash = "sha256:d3aad8ff98a1b8cf1866b31318d2321cacb70cde819980b34051ac991c79445b"},
+    {file = "mcstatus-10.0.2.tar.gz", hash = "sha256:c112ac5ae114be7faac663628de70179c13ce9b4b136fbf075d02dd91468173f"},
+]
+
+[package.dependencies]
+asyncio-dgram = "2.1.2"
+dnspython = "2.2.1"
 
 [[package]]
 name = "mslex"
@@ -947,4 +998,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "25c22c3ca3176e414942dc9ee9bef8e0728581afe5bd6aa3d437cb8353aaefb4"
+content-hash = "b8d2d87a3acd44a49a2adc1eb833465688bcd9b7125ef8c2493e3d397e251d51"

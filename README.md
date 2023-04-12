@@ -43,10 +43,10 @@ After 2 consecutive polls indicate the server has no players connected,
 a `POST` request will be sent to `KILL_WEBHOOK` and the tool quits.
 
 If the tool cannot obtain info from `HOST:PORT`,
-it will retry forever; approximately every 10 seconds.
+it will retry for 10 minutes; approximately every 10 seconds.
 
 If `POST` request to `KILL_WEBHOOK` receives an error response,
-it will be retried 5 times, then quit.
+it will be retried 6 times, then quit.
 
 ## Docker container
 

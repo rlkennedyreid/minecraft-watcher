@@ -24,7 +24,11 @@ _logger = getLogger(__name__)
     before_sleep=before_sleep_log(_logger, ERROR),
 )
 def get_status(host: str, port: int) -> PingResponse:
-    return JavaServer.lookup(host, port).status()
+    server = JavaServer.lookup(host, port)
+
+    _logger.debug(f"Parsed server: {server.address.host}:{server.address.port}")
+
+    return server.status()
 
 
 def get_num_players(host: str, port: int) -> int:

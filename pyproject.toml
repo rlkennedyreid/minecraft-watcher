@@ -18,7 +18,7 @@ minecraft-watcher = "minecraft_watcher.__main__:main"
 python = "^3.10"
 pydantic = {extras = ["dotenv"], version = "^1.10.6"}
 typer = {extras = ["all"], version = "^0.7.0"}
-requests = "^2.28.2"
+requests = "^2.30.0"
 tenacity = "^8.2.2"
 types-requests = "^2.28.11.15"
 mcstatus = "^10.0.3"
